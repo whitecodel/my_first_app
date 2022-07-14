@@ -5,8 +5,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('data'),
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, '/second');
+        },
+        child: const Text('Home Screen'),
+      ),
     );
   }
 }
