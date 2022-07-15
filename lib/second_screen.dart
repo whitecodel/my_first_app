@@ -5,8 +5,14 @@ class SecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('Second Screen'),
+    return Scaffold(
+      appBar: AppBar(
+          // title: const Text('Home Screen'),
+          ),
+      body: GestureDetector(
+        onTap: () => Navigator.pop(context),
+        child: const Text('Second Screen'),
+      ),
     );
   }
 }
