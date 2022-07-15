@@ -22,6 +22,17 @@ class HomeScreen extends StatelessWidget {
           //   ),
           // );
         },
+        child: block(),
+      ),
+    );
+  }
+
+  Container block() {
+    return Container(
+      width: 200,
+      height: 200,
+      color: Colors.blue,
+      child: Center(
         child: const Text('Home Screen'),
       ),
     );
