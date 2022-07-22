@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
+import 'login_screen.dart';
 import 'second_screen.dart';
 
 void main() {
@@ -14,12 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => const HomeScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const SecondScreen(),
+        '/login': (context) => const LoginScreen(),
       },
     );
   }

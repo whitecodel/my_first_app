@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:my_first_app/controllers/home_controller.dart';
 
 import 'second_screen.dart';
+
+HomeController homeController = HomeController();
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,31 +12,24 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          // title: const Text('Home Screen'),
-          ),
-      body: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, '/second');
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => const SecondScreen(),
-          //   ),
-          // );
+      // appBar: AppBar(
+      //     // title: const Text('Home Screen'),
+      //     ),
+      body: StatefulBuilder(
+        builder: (context, setState) {
+          return Column(
+            children: [
+              Image.asset('assets/images/login.jpg'),
+              Text(homeController.a),
+              RaisedButton(
+                child: Text('Change Value'),
+                onPressed: () {
+                  homeController.changeValue(setState: setState);
+                },
+              ),
+            ],
+          );
         },
-        child: block(),
-      ),
-    );
-  }
-
-  Container block() {
-    return Container(
-      width: 200,
-      height: 200,
-      color: Colors.blue,
-      child: Center(
-        child: const Text('Home Screen'),
       ),
     );
   }
